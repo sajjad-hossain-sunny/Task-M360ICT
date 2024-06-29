@@ -27,3 +27,9 @@ export interface Products {
   returnPolicy?: string,
   reviews: Reviews[],
 }
+
+export interface Category {
+  slug: string;
+  name: string;
+  url: string;
+}

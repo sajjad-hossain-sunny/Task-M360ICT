@@ -4,7 +4,7 @@ import { useDeleteItemMutation, useGetProductsQuery } from "../../services/api";
 import { Table, Flex, Spin, Button, Pagination, Space, Popconfirm, message } from "antd";
 import type { TableColumnsType, PopconfirmProps } from "antd";
 import { useNavigate } from "react-router-dom";
-import { MyModal } from "../../core";
+import { CustomSelect, MyModal } from "../../core";
 import { Products } from "../../types/types";
 import { EditOutlined } from "@ant-design/icons";
 
@@ -147,6 +147,9 @@ const Home: FC = () => {
             <div style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>Error:</div>
             :
             <>
+            <Flex className="justify-end">
+              <CustomSelect />
+            </Flex>
               <Table
                 columns={columns}
                 dataSource={products}

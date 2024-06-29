@@ -1,26 +1,19 @@
-// import { configureStore } from '@reduxjs/toolkit';
-import { ProductsApi } from './services/api';
+import { ProductsApi } from "./services/api";
 
-// export const store = configureStore({
-//   reducer: {
-//     [ProductsApi.reducerPath]: ProductsApi.reducer,
-//   },
-//   middleware: (getDefaultMiddleware) =>
-//     getDefaultMiddleware().concat(ProductsApi.middleware),
-// });
-
-
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore } from "@reduxjs/toolkit";
+import { CategoriesApi } from "./services/CategoriesApi";
 
 export const store = configureStore({
   reducer: {
     [ProductsApi.reducerPath]: ProductsApi.reducer,
+    [CategoriesApi.reducerPath]: CategoriesApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware().concat(ProductsApi.middleware),
-})
+    getDefaultMiddleware().concat(
+      ProductsApi.middleware,
+      CategoriesApi.middleware
+    ),
+});
 
-// Infer the `RootState` and `AppDispatch` types from the store itself
-export type RootState = ReturnType<typeof store.getState>
-// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
-export type AppDispatch = typeof store.dispatch
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
