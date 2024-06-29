@@ -11,3 +11,9 @@
   font-size: 20px !important;
   font-weight: 700 !important;
 }
+.ant-image{
+  width: 90%;
+}
+.ant-image-preview-img{
+  scale: 1.2;
+}

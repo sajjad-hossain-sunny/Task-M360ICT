@@ -1,13 +1,21 @@
-import { FC } from "react"
+import { FC } from 'react';
+import { useLocation } from 'react-router-dom';
+import { Products } from '../../types/types';
+import ProductsDetailsWrapper from './components/ProductsDetailsWrapper';
 
 
-const ProductDetails: FC = () => {
+const ProductDetail: FC = () => {
+  const location = useLocation();
+  const { record } = (location.state as { record: Products }) || {};  
   return (
-    <div className="ProductDetails">
-      
-    </div>
-  )
-}
+    <>
+      {record ? (
+        <ProductsDetailsWrapper record={record}/>
+      ) : (
+        <p>Loading...</p>
+      )}
+    </>
+  );
+};
 
-export default ProductDetails
-
+export default ProductDetail;
