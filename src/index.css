@@ -1,0 +1,13 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.ant-modal-title{
+  font-size: 20px !important;
+  font-weight: 700 !important;
+}
